@@ -1,0 +1,77 @@
+.#{$css-prefix}input {
+    display: inline-block;
+    width: 100%;
+    height: 32px;
+    line-height: 1.5;
+    padding: 4px 7px;
+    font-size: 12px;
+    border: 1px solid #dddee1;
+    border-radius: 4px;
+    color: #495060;
+    background-color: #fff;
+    background-image: none;
+    position: relative;
+    cursor: text;
+    transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out;
+    &-wrapper{
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        vertical-align: middle;
+
+        // #2149 & #2219
+        line-height: normal
+    }
+    &-icon {
+        width: 32px;
+        height: $input-height-base;
+        line-height: $input-height-base;
+        font-size: 16px;
+        text-align: center;
+        color: $subsidiary-color;
+        position: absolute;
+        right: 0;
+        z-index: 3;
+    }
+    &-hide-icon &-icon{
+        display: none;
+    }
+    &-icon-validate{
+        display: none;
+    }
+
+    &-wrapper{
+        .#{$css-prefix}input-icon-clear{
+            display: none;
+        }
+        &:hover{
+            .#{$css-prefix}input-icon-clear{
+                display: inline-block;
+            }
+        }
+    }
+
+    &-icon-normal + &{
+        padding-right: 32px;
+    }
+    // #554
+    &-hide-icon &-icon-normal + &{
+        padding-right: $input-padding-horizontal;
+    }
+
+    &-wrapper-large &-icon{
+        font-size: 18px;
+        height: $input-height-large;
+        line-height: $input-height-large;
+    }
+    &-wrapper-small &-icon{
+        width: 24px;
+        font-size: 14px;
+        height: $input-height-small;
+        line-height: $input-height-small;
+
+        //+ .#{$css-prefix}input {
+        //    padding-right: 24px;
+        //}
+    }
+}
