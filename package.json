@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/didengren/zview#readme",
   "devDependencies": {
+    "husky": "^3.0.8",
     "lint-staged": "^9.4.1"
   }
 }
