@@ -6,6 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,vue}": [
+      "eslint",
+      "git add"
+    ],
+    "*.{vue,css,less}": [
+      "stylelint",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/didengren/zview.git"
@@ -19,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/didengren/zview/issues"
   },
-  "homepage": "https://github.com/didengren/zview#readme"
+  "homepage": "https://github.com/didengren/zview#readme",
+  "devDependencies": {
+    "lint-staged": "^9.4.1"
+  }
 }
