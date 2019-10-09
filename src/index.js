@@ -1,5 +1,3 @@
-const ka = {};
+const ka = {}
 
-export default {
-  ka
-};
+export default {ka}
