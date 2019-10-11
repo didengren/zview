@@ -1,3 +1,7 @@
 const ka = {};
+const da = {};
 
-export default { ka };
+export default {
+  ka,
+  da,
+};

@@ -40,7 +40,7 @@ module.exports = {
         "no-console": 0,
         "no-plusplus": 0,
         "arrow-parens": 2,
-        "comma-dangle": ["error", "never"],
+        "comma-dangle": 0,
         "default-case": 0,
         "prefer-template": 0,
         "consistent-return": 0,
@@ -82,6 +82,6 @@ module.exports = {
         "vue/name-property-casing": ["error", "kebab-case"],
         "vue/component-name-in-template-casing": ["error", "kebab-case"],
         "vue/html-closing-bracket-newline": 2,
-        "prettier/prettier": "error",
+        "prettier/prettier": "error"
     }
 }
