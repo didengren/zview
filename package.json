@@ -21,7 +21,7 @@
   "lint-staged": {
     "*.{ts,tsx,js,vue}": [
       "eslint",
-      "git add"
+      "git commit -a"
     ]
   },
   "repository": {
