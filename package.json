@@ -11,7 +11,9 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint \"./src/**\" --fix --ext .ts,.tsx"
+    "lint": "eslint \"./src/**\" --fix --ext .ts,.tsx",
+    "dev": "npm run build:entry",
+    "build:entry": "node build/build-entry.js"
   },
   "husky": {
     "hooks": {
@@ -40,7 +42,9 @@
   "homepage": "https://github.com/didengren/zview#readme",
   "dependencies": {
     "@babel/runtime": "^7.6.3",
-    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0"
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "fs-extra": "^8.1.0",
+    "uppercamelcase": "^3.0.0"
   },
   "peerDependencies": {
     "vue": ">= 2.5.0"
@@ -73,7 +77,6 @@
     "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
     "style-loader": "^1.0.0",
-    "uppercamelcase": "^3.0.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
     "vue-router": "^3.1.3",
