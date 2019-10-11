@@ -40,7 +40,7 @@ module.exports = {
         "no-console": 0,
         "no-plusplus": 0,
         "arrow-parens": 2,
-        "comma-dangle": 0,
+        // "comma-dangle": 0,
         "default-case": 0,
         "prefer-template": 0,
         "consistent-return": 0,
