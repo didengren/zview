@@ -21,7 +21,8 @@
   "lint-staged": {
     "*.{ts,tsx,js,vue}": [
       "eslint",
-      "git add"
+      "git add",
+      "git commit -m \"#\""
     ],
     "*.{vue,css,less}": [
       "stylelint",
