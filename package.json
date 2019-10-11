@@ -20,7 +20,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,vue}": [
-      "eslint",
+      "npm run lint",
       "git add"
     ]
   },
