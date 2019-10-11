@@ -21,12 +21,11 @@
   "lint-staged": {
     "*.{ts,tsx,js,vue}": [
       "eslint",
-      "git add",
-      "git commit -m \"#\""
+      "git add ."
     ],
     "*.{vue,css,less}": [
       "stylelint",
-      "git add"
+      "git add ."
     ]
   },
   "repository": {
