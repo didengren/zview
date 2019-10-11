@@ -3,5 +3,5 @@ const da = {};
 
 export default {
   ka,
-  da
+  da,
 };
