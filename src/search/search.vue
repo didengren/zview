@@ -79,7 +79,7 @@
                 @search="onSearch"
                 @cancel="onCancel"
                 @input="onInput"/> -->
-      <input />
+      <input :placeholder="'slk23l242342342'" />
     </form>
     <div class="scroll-area-1" :style="{ height: scrollH + 'px' }">
       <div v-if="historyList.length > 0" class="search-history">
@@ -219,6 +219,7 @@ export default {
       // }
     },
     onClear() {
+      console.log("slk23l242342342");
       // this.db.clear((e) => {
       //     console.log('数据清空成功', e)
       //     if (e.type === 'success') {

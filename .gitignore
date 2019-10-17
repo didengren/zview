@@ -8,6 +8,9 @@
 node_modules
 package-lock.json
 
+# yarn
+yarn-error.log
+
 # dist file
 es
 lib
