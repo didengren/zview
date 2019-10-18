@@ -1,4 +1,4 @@
-module.exports = function (api) {
+module.exports = function(api) {
   // const { BABEL_MODULE, NODE_ENV } = process.env;
   // const useESModules = BABEL_MODULE !== 'commonjs' && NODE_ENV !== 'test';
 
@@ -19,7 +19,8 @@ module.exports = function (api) {
         {
           functional: false
         }
-      ]
+      ],
+      "@babel/preset-typescript"
     ],
     plugins: [
       [
@@ -31,7 +32,7 @@ module.exports = function (api) {
           useESModules: false
         }
       ],
-      '@babel/plugin-transform-object-assign'
+      "@babel/plugin-transform-object-assign"
     ]
   };
 };
