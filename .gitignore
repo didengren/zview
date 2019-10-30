@@ -1,14 +1,20 @@
+*.log*
+.cache
 .DS_Store
-node_modules/
-dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-test/unit/coverage
-
-# Editor directories and files
 .idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+.vscode
+
+# npm
+node_modules
+package-lock.json
+
+# yarn
+yarn-error.log
+
+# dist file
+es
+lib
+dist
+docs/dist
+changelog.generated.md
+test/coverage

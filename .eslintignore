@@ -1,2 +1,4 @@
-build/*.js
-config/*.js
+es
+lib
+dist
+node_modules
