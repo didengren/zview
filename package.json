@@ -1,6 +1,6 @@
 {
   "name": "zu-view",
-  "version": "0.1.9",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
