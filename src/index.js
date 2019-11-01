@@ -2,7 +2,7 @@
 
 import Search from "./search";
 
-const version = "0.1.0";
+const version = "0.1.1";
 const components = [Search];
 
 const install = (Vue) => {
