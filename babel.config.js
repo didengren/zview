@@ -5,34 +5,16 @@ module.exports = function(api) {
   api && api.cache(false);
 
   return {
-    presets: [
-      [
-        "@babel/preset-env",
-        {
-          loose: true,
-          // modules: useESModules ? false : 'commonjs'
-          modules: false
-        }
-      ],
-      [
-        "@vue/babel-preset-jsx",
-        {
-          functional: false
-        }
-      ],
-      "@babel/preset-typescript"
-    ],
+    presets: ["vca-jsx", "@vue/app"],
     plugins: [
       [
-        "@babel/plugin-transform-runtime",
+        "import",
         {
-          corejs: false,
-          helpers: true,
-          regenerator: false,
-          useESModules: false
-        }
-      ],
-      "@babel/plugin-transform-object-assign"
+          libraryName: "zview",
+          style: true
+        },
+        "zview"
+      ]
     ]
   };
 };

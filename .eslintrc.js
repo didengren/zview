@@ -1,29 +1,22 @@
 module.exports = {
   "root": true,
-  "parser": "vue-eslint-parser",
   "extends": [
-    // "eslint:recommended",
-    "airbnb-base",
     "plugin:vue/recommended",
+    "@vue/standard",
+    "@vue/typescript",
     "prettier",
     "prettier/vue"
   ],
   "parserOptions": {
-    "parser": "babel-eslint",
-    "ecmaVersion": 2019,
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 2018,
     "sourceType": "module",
-    // "ecmaFeatures": {
-    //     "jsx": true
-    // }
+    "extraFileExtensions": ['.vue'],
     "allowImportExportEverywhere": true
-    // "codeFrame": false
   },
-  "plugins": ["vue", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "env": {
-    "es6": true,
-    "browser": true,
-    "node": true,
-    // "jest": true
+    "node": true
   },
   "globals": {
     "window": false,
