@@ -2,3 +2,6 @@ es
 lib
 dist
 node_modules
+docs/public/
+docs/src/assets/
+packages/**/*.md

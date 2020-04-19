@@ -10,10 +10,10 @@ module.exports = function(api) {
       [
         "import",
         {
-          libraryName: "zview",
+          libraryName: "zue-ui",
           style: true
         },
-        "zview"
+        "zue-ui"
       ]
     ]
   };
