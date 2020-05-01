@@ -1,4 +1,4 @@
-const transferCommonStyle = require("./plugin/transferCommonStyle");
+const transferCommonStyle = require("./transferCommonStyle");
 
 module.exports = {
   presets: [

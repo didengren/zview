@@ -14,10 +14,15 @@
   ],
   "scripts": {
     "docs": "vue-cli-service serve",
-    "lint": "eslint \"./docs/\" \"./packages/\" --fix --ext .ts,.tsx,.vue",
-    "dev": "npm run build:entry && webpack-dev-server --config build/webpack.dev.js",
-    "build:js": "node build/buildComponents.js",
-    "build:entry": "node build/build-entry.js"
+    "serve": "npm run docs",
+    "build:docs": "vue-cli-service build",
+    "build": "npm run build:docs",
+    "build:js": "node cmd/buildComponents.js",
+    "build:css": "node cmd/buildStyle.js",
+    "build:single-css-entry": "node cmd/buildSingleCompStyleEntry.js",
+    "build:css-entry": "node cmd/buildStyleEntry.js",
+    "build:lib": "npm run build:js && npm run build:css && npm run build:css-entry",
+    "lint": "eslint \"./docs/\" \"./packages/\" --fix --ext .ts,.tsx,.vue"
   },
   "husky": {
     "hooks": {
@@ -74,6 +79,7 @@
     "babel-preset-vca-jsx": "^0.3.4",
     "camelcase": "^5.3.1",
     "clean-css": "^4.2.3",
+    "dependency-tree": "^7.2.1",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
     "eslint-loader": "^3.0.2",
