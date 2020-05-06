@@ -1,5 +1,5 @@
 // import Dialog from "@@/dialog/README.md";
-// import Button from "@@/button/README.md";
+import Button from "@@/button/README.md";
 // import Loading from "@@/loading/README.md";
 // import Popup from "@@/popup/README.md";
 // import Field from "@@/field/README.md";
@@ -44,69 +44,69 @@ export const routerDir: PackageItemGroup[] = [
   {
     title: "基础组件",
     items: [
-      {
-        title: "Dialog 弹出框",
-        name: "dialog"
-      },
+      // {
+      //   title: "Dialog 弹出框",
+      //   name: "dialog"
+      // },
       {
         title: "Button 按钮",
         name: "button"
-      },
-      {
-        title: "Loading 加载",
-        name: "loading"
-      },
-      {
-        title: "Toast 提示",
-        name: "toast"
-      },
-      {
-        title: "Popup 弹出层",
-        name: "popup"
-      },
-      {
-        title: "Empty 空组件",
-        name: "empty"
-      },
-      {
-        title: "Skeleton 骨架",
-        name: "skeleton"
       }
-    ]
-  },
-  {
-    title: "高级组件",
-    items: [
-      {
-        title: "PageButton 页面按钮",
-        name: "page-button"
-      },
-      {
-        title: "Field 字段输入",
-        name: "field"
-      },
-      {
-        title: "Photo 图片",
-        name: "photo"
-      },
-      {
-        title: "InfiniteScroll 列表",
-        name: "infinite-scroll"
-      },
-      {
-        title: "SlideDelete 左滑删除",
-        name: "slide-delete"
-      },
-      {
-        title: "TabNav 底部菜单",
-        name: "tab-nav"
-      },
-      {
-        title: "ContentCard 内容卡片",
-        name: "content-card"
-      }
+      // {
+      //   title: "Loading 加载",
+      //   name: "loading"
+      // },
+      // {
+      //   title: "Toast 提示",
+      //   name: "toast"
+      // },
+      // {
+      //   title: "Popup 弹出层",
+      //   name: "popup"
+      // },
+      // {
+      //   title: "Empty 空组件",
+      //   name: "empty"
+      // },
+      // {
+      //   title: "Skeleton 骨架",
+      //   name: "skeleton"
+      // }
     ]
   }
+  // {
+  //   title: "高级组件",
+  //   items: [
+  //     {
+  //       title: "PageButton 页面按钮",
+  //       name: "page-button"
+  //     },
+  //     {
+  //       title: "Field 字段输入",
+  //       name: "field"
+  //     },
+  //     {
+  //       title: "Photo 图片",
+  //       name: "photo"
+  //     },
+  //     {
+  //       title: "InfiniteScroll 列表",
+  //       name: "infinite-scroll"
+  //     },
+  //     {
+  //       title: "SlideDelete 左滑删除",
+  //       name: "slide-delete"
+  //     },
+  //     {
+  //       title: "TabNav 底部菜单",
+  //       name: "tab-nav"
+  //     },
+  //     {
+  //       title: "ContentCard 内容卡片",
+  //       name: "content-card"
+  //     }
+  //   ]
+  // }
   // {
   //   title: "Saas业务组件",
   //   items: [
@@ -120,5 +120,6 @@ export const routerDir: PackageItemGroup[] = [
 ];
 
 export const markdown = {
-  Bem
+  Bem,
+  Button
 };

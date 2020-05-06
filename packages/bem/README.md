@@ -12,13 +12,13 @@ const bem = Bem(name: string, app?: string);
 ```jsx
 class Button {
   render() {
-    const bem = use("button", "zue");
+    const bem = bem("button", "zue");
     return (
-      <div class={bem()}>
-        <div class={bem("goods")}>
-          <div class={bem("goods", ["img", { normal: true }])}></div>
-        </div>
-      </div>
+      <button class={bem()}>
+        <span class={bem("text", false)}>
+          {this.$slots.default || this.text}
+        </span>
+      </button>
     );
   }
 }
@@ -37,8 +37,7 @@ export const bem = (mod: string) => use(mod, "你的全局命名名称")
 
 - 不存在，可直接调用
 ```js
-const bem = use("cart")
+const bem = use("button")
 
-bem("nav")
-bem("cart", "submit")
+bem("button", "text")
 ```

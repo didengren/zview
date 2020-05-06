@@ -21,7 +21,7 @@
     "build:css": "node cmd/buildStyle.js",
     "build:single-css-entry": "node cmd/buildSingleCompStyleEntry.js",
     "build:css-entry": "node cmd/buildStyleEntry.js",
-    "build:lib": "npm run build:js && npm run build:css && npm run build:css-entry",
+    "build:lib": "npm run build:js && npm run build:css && npm run build:single-css-entry && npm run build:css-entry",
     "lint": "eslint \"./docs/\" \"./packages/\" --fix --ext .ts,.tsx,.vue"
   },
   "husky": {
@@ -93,7 +93,7 @@
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2",
     "rollup": "^2.1.0",
-    "typescript": "^3.8.2",
+    "typescript": "^3.8.3",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-router": "^3.1.3",

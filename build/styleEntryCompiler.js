@@ -99,13 +99,10 @@ exports.genStylDepsImportDeclaration = (component) => {
   fs.outputFileSync(outputPath, source);
 };
 
-exports.genPackageEntryStyle = () => {
+exports.genPackageEntryStyle = (dirname) => {
   const pkgPath = path.resolve(__dirname, "../packages");
   const libPath = path.resolve(__dirname, "../lib");
-  const dirs = fs.readdirSync(pkgPath);
-  for (let i = 0; i < dirs.length; i++) {
-    let origin = path.join(pkgPath, `${dirs[i]}/index${STYLE_EXTS[1]}`);
-    let dest = path.join(libPath, `${dirs[i]}/index${STYLE_EXTS[1]}`);
-    fs.copySync(origin, dest);
-  }
+  let origin = path.join(pkgPath, `${dirname}/index${STYLE_EXTS[1]}`);
+  let dest = path.join(libPath, `${dirname}/index${STYLE_EXTS[1]}`);
+  fs.copySync(origin, dest);
 };

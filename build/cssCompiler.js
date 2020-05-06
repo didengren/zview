@@ -19,9 +19,11 @@ exports.cssCompiler = (dir) => {
   console.log(`编译 ${dir}/index.less`);
 
   // https://github.com/youzan/vant/blob/26449eb1eaa1b5a4c05f6482addf6f23b2ba8d01/packages/vant-cli/src/compiler/compile-less.ts#L18
-  less.render(source, (error, output) => {
+  // http://lesscss.org/usage/#less-options
+  // notice: then set the filename field on options to be the filename of the main file. less will handle all the processing of the imports.
+  less.render(source, { filename: originFilePath }, (error, output) => {
     if (error) throw new Error(error);
-    fs.outputFileSync(fileLibPath, cleanCSS.minify(output.css));
+    fs.outputFileSync(fileLibPath, cleanCSS.minify(output.css).styles);
   });
 };
 
