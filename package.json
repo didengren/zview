@@ -14,7 +14,6 @@
   ],
   "scripts": {
     "docs": "vue-cli-service serve",
-    "serve": "npm run docs",
     "build:docs": "vue-cli-service build",
     "build": "npm run build:docs",
     "build:js": "node cmd/buildComponents.js",
@@ -91,7 +90,7 @@
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2",
     "rollup": "^2.1.0",
-    "typescript": "^3.8.3",
+    "typescript": "^3.8.2",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-router": "^3.1.3",
