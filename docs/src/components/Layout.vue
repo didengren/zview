@@ -161,7 +161,7 @@ export default class Layout extends Vue {
                 <span>Zue UI</span>
                 <span class={bem("top", "content-small", false)}>
                   {" "}
-                  天合光能移动端组件库
+                  天合移动端组件库
                 </span>
               </div>
             </a>

@@ -19,9 +19,7 @@
     "build": "npm run build:docs",
     "build:js": "node cmd/buildComponents.js",
     "build:css": "node cmd/buildStyle.js",
-    "build:single-css-entry": "node cmd/buildSingleCompStyleEntry.js",
-    "build:css-entry": "node cmd/buildStyleEntry.js",
-    "build:lib": "npm run build:js && npm run build:css && npm run build:single-css-entry && npm run build:css-entry",
+    "build:lib": "npm run build:js && npm run build:css",
     "lint": "eslint \"./docs/\" \"./packages/\" --fix --ext .ts,.tsx,.vue"
   },
   "husky": {

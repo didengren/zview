@@ -2,7 +2,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const babel = require("@babel/core");
 const babelConf = {
-  configFile: path.join(__dirname, "./babel.config.js")
+  configFile: path.join(__dirname, "./config/babel.config.js")
 };
 const srcPath = path.resolve(__dirname, "../packages");
 const scriptRegExp = /\.(js|ts|tsx)$/;

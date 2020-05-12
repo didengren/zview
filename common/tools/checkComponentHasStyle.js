@@ -6,5 +6,4 @@ const srcPath = path.join(__dirname, "../packages");
 const getStylePath = (name) =>
   path.join(srcPath, name, `index${STYLE_EXTS[1]}`);
 
-exports.checkComponentHasStyle = (component) =>
-  fs.existsSync(getStylePath(component));
+module.exports = (component) => fs.existsSync(getStylePath(component));

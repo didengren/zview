@@ -1,10 +1,10 @@
 const dependencyTree = require("dependency-tree");
 const path = require("path");
 const fs = require("fs-extra");
-const { STYLE_EXTS } = require("../common/constants");
-
-const whiteList = ["popup"];
-const emptyStyleComponents = ["bem", "utils"];
+const {
+  WHITE_LIST,
+  EMPTY_STYLE_COMPONENTS
+} = require("../../common/constants");
 
 function getComponentNameFromPath(file) {
   let last = file.lastIndexOf("/");
@@ -17,7 +17,7 @@ function getComponentNameFromPath(file) {
  component: button
  result: [button]
  components: [bem, button, cell - group, content - card, dialog, ...]
- whiteList: [popup]
+ WHITE_LIST: [popup]
  checkList: [popup, bem, button, cell - group, content - card, ..., loading]
  directory: "/Users/xunianzu/Downloads/esc-ui-master/lib"
  filename: "@/lib/button/index.js"
@@ -52,9 +52,11 @@ function getComponentNameFromPath(file) {
  */
 function getDependence(component) {
   const result = [component];
-  const components = require("./getComponent")("style");
-  const checkList = whiteList.concat(components);
-  const directory = path.resolve(__dirname, "../lib");
+  const components = require("../../common/tools/getDirsFromPackages")(
+    "general_components"
+  );
+  const checkList = WHITE_LIST.concat(components);
+  const directory = path.resolve(__dirname, "../../lib");
   const filename = path.join(directory, component, "index.js");
   const dependence = dependencyTree({
     directory,
@@ -66,7 +68,7 @@ function getDependence(component) {
     Object.keys(obj).forEach((file) => {
       const name = getComponentNameFromPath(file);
       if (checkList.some((x) => x === name)) {
-        if (whiteList.every((x) => x !== name)) {
+        if (WHITE_LIST.every((x) => x !== name)) {
           result.push(name);
         }
         obj[file] && search(obj[file]);
@@ -77,32 +79,30 @@ function getDependence(component) {
   return result;
 }
 
-exports.genStylDepsImportDeclaration = (component) => {
-  const styleDepsArr = [...new Set(getDependence(component))];
+module.exports = function genStylDepsImportDeclaration(ctx) {
+  console.log("Run GenStylDepsImportDeclaration");
+
+  const styleDepsArr = [...new Set(getDependence(ctx.dirname))];
   const outputPath = path.join(
     __dirname,
-    "../lib",
-    component,
+    "../../lib",
+    ctx.dirname,
     "style/index.js"
   );
-  if (emptyStyleComponents.some((item) => item === component))
-    fs.ensureFileSync(path.join(__dirname, "../lib", component, "index.css"));
-  console.log("styleDepsArr_____", component, styleDepsArr);
+  if (EMPTY_STYLE_COMPONENTS.some((item) => item === ctx.dirname))
+    fs.ensureFileSync(
+      path.join(__dirname, "../../lib", ctx.dirname, "index.css")
+    );
   const source = styleDepsArr
     .map((item) => {
       const reqPath =
-        component === item ? "../index.css" : `../../${item}/index.css`;
+        ctx.dirname === item ? "../index.css" : `../../${item}/index.css`;
       return `require("${reqPath}");`;
     })
     .join("\n");
-  console.log(`组件 ${component} 注入依赖样式 ${styleDepsArr.join("/")}`);
+  console.log(`组件 ${ctx.dirname} 注入依赖样式 ${styleDepsArr.join("/")}`);
   fs.outputFileSync(outputPath, source);
-};
+  console.log("Run GenStylDepsImportDeclaration Success");
 
-exports.genPackageEntryStyle = (dirname) => {
-  const pkgPath = path.resolve(__dirname, "../packages");
-  const libPath = path.resolve(__dirname, "../lib");
-  let origin = path.join(pkgPath, `${dirname}/index${STYLE_EXTS[1]}`);
-  let dest = path.join(libPath, `${dirname}/index${STYLE_EXTS[1]}`);
-  fs.copySync(origin, dest);
+  return ctx;
 };

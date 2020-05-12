@@ -12,7 +12,7 @@ module.exports = function() {
           //   "======================================================================================"
           // );
           if (lessSuffixRegExp.test(value)) {
-            addSideEffect(path, value.replace(lessSuffixRegExp, ".css"));
+            addSideEffect(path, value.replace(".less", ".css"));
             console.log("path______", path);
             console.log(
               "======================================================================================"
